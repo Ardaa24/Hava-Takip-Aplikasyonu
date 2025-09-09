@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="TR-tr, EN-en">
+
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hava Takip Aplikasyonu</title>
+
+    <link rel="stylesheet" href="Assets/style.css" />
+    <link rel="stylesheet" href="load.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="load.js" defer></script>
+    <script src="Assets/script.js" defer></script>
+
+
+</head>
+
+<body>
+
+    <!-- Loader Overlay (new) -->
+    <div id="loader" role="status" aria-live="polite" aria-busy="true">
+        <div class="loader-wrapper">
+            <div class="loader-pictos" aria-hidden="true">
+                <i class="bx bx-sun"></i>
+                <i class="bx bx-cloud"></i>
+                <i class="bx bx-cloud-rain"></i>
+                <i class="bx bx-wind"></i>
+            </div>
+            <p class="loader-label">Yükleniyor…</p>
+            <div class="loader-bar" aria-hidden="true">
+                <span class="loader-bar-fill"></span>
+            </div>
+        </div>
+    </div>
+
+    <nav class="app-navbar" role="navigation" aria-label="Ana menü">
+        <div class="nav-inner">
+            <a class="nav-brand" href="#"
+                aria-label="Hava Takip Aplikasyonu Ana Sayfa">Arda24</a>
+            <ul class="nav-links">
+                <!--<li><a href="#index.html">Aplikasyon</a></li>-->
+                <li><a href="#links">Bağlantılar</a></li>
+                <li><a href="#v2">Sürüm V2.0</a></li>
+                <li><a href="https://github.com/Ardaa24" target="_blank">Geliştirici </a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="background">
+        <div class="video">
+            <video autoplay muted loop id="backVideo">
+                <source src="Assets/Images/background.mp4" type="video/mp4">
+
+            </video>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+
+
+        <div class="search-box">
+
+            <i class="bx bxs-map"></i>
+
+            <input type="text" placeholder="Şehri Arat!" />
+
+            <button class="bx bx-search"></button>
+
+        </div>
+
+        <p class="city-hide">Şehri Gizle</p>
+
+
+        <div class="weather-box">
+
+            <div class="box">
+                <div class="info-weather">
+                    <div class="weather">
+                        <img src="Assets/Images/cloud.png" />
+
+                        <p class="temperature">0<span>°C</span></p>
+
+                        <p class="description">Parçalı Bulutlu</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="weather-details">
+
+
+            <div class="humidity">
+
+                <i class="bx bx-water"></i>
+
+                <div class="text">
+                    <div class="info-humidity">
+                        <span>0%</span>
+                    </div>
+                    <p>Nem Oranı</p>
+
+                </div>
+            </div>
+
+            <div class="wind">
+
+                <i class="bx bx-wind"></i>
+
+                <div class="text">
+                    <div class="info-wind">
+                        <span>0Km/h</span>
+
+                    </div>
+                    <p>Rüzgar Hızı</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="not-found">
+
+            <div class="box">
+                <img src="Assets/Images/404.png" />
+
+                <p>Üzgünüm! Sanırım yanlış lokasyonu yazdın! 📍</p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Links  Module -->
+    <div id="links-modal" class="links-modal" aria-hidden="true" role="dialog" aria-label="Bağlantılar Modülü">
+        <div class="links-backdrop" data-close></div>
+        <div class="links-panel" role="document">
+            <button class="links-close" type="button" aria-label="Kapat" data-close>
+                <i class="bx bx-x"></i>
+            </button>
+            <h2 class="links-title">Bağlantılar</h2>
+            <div class="links-grid">
+                <div class="link-card" data-service="github" data-url="https://github.com/Ardaa24">
+                    <div class="leaf-icon"><i class="bx bxl-github"></i></div>
+                    <h3>GitHub</h3>
+                    <div class="link-actions">
+                        <a href="https://github.com/Ardaa24" target="_blank" rel="noopener" class="open-link"
+                            aria-label="Github bağlantısını aç">Git</a>
+                    </div>
+                </div>
+                <div class="link-card" data-service="youtube" data-url="https://www.youtube.com/@aarda24">
+                    <div class="leaf-icon"><i class="bx bxl-youtube"></i></div>
+                    <h3>YouTube</h3>
+                    <div class="link-actions">
+                        <a href="https://www.youtube.com/@aarda24" target="_blank" rel="noopener" class="open-link"
+                            aria-label="Youtube bağlantısını aç">Git</a>
+                    </div>
+                </div>
+                <div class="link-card" data-service="discord" data-url="https://discord.gg/#">
+                    <div class="leaf-icon"><i class="bx bxl-discord"></i></div>
+                    <h3>Discord</h3>
+                    <div class="link-actions">
+                        <a href="https://discord.gg/yourInvite" target="_blank" rel="noopener" class="open-link"
+                            aria-label="Discord bağlantısını aç">Git</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- V2.0 Modal Module -->
+    <div id="v2-modal" class="links-modal" aria-hidden="true" role="dialog" aria-label="V2.0 Bilgi Modülü">
+        <div class="links-backdrop" data-close></div>
+        <div class="links-panel" role="document">
+            <button class="links-close" type="button" aria-label="Kapat" data-close>
+                <i class="bx bx-x"></i>
+            </button>
+            <h2 class="links-title">V2.0 Notları</h2>
+            <div class="v2-content">
+                <textarea class="v2-textarea" aria-label="V2.0 metin alanı" readonly>
+V2.0 Sürüm Notları
+
+- Yeni responsive yükleme ekranı (min 2 sn, bar animasyonu)
+- Hava durumu temalı ikonlar ve iyileştirilmiş renk paleti
+- Üst sabit navbar (mobil uyumlu, hover animasyonları)
+- “Bağlantılar” modülü: sabit link kartları (GitHub, YouTube, Discord)
+- “V2.0” modülü: sürüm notları paneli (salt-okunur)
+
+Gelecek (Plan):
+- Arama deneyimi iyileştirmeleri
+- Erişilebilirlik (A11y) geliştirmeleri
+- Performans optimizasyonları
+                </textarea>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="footer">
+            <div class="footer-inner">
+                <a href="#index.html" class="footer-brand" aria-label="Ana sayfa">
+                    Hava Takip Aplikasyonu | V2.0 | @Arda24
+                </a>
+                <div class="footer-actions">
+                    <a class="footer-btn" href="https://github.com/Ardaa24" target="_blank" aria-label="GitHub">
+                        <i class="bx bxl-github"></i>
+                    </a>
+                    <a class="footer-btn" href="https://www.youtube.com/@aarda24" target="_blank" aria-label="YouTube">
+                        <i class="bx bxl-youtube"></i>
+                    </a>
+                    <a class="footer-btn" href="https://discord.gg/#" target="_blank" aria-label="Discord">
+                        <i class="bx bxl-discord"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
