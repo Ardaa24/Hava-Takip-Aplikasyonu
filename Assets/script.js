@@ -26,7 +26,7 @@ search.addEventListener("click", () => {
     if (city == "") return;
 
     fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=tr&appid=${APIKey}`
+        //APIKEY
     )
 
         .then((response) => response.json())
@@ -234,4 +234,5 @@ document.addEventListener('DOMContentLoaded', function () {
         //e.stopPropagation();
     //}
 //});
+
 
