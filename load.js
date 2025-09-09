@@ -7,7 +7,7 @@
     htmlEl.classList.add('loading');
     bodyEl.classList.add('loading');
 
-    // Typewriter effect for loader label
+    //
     var labelEl = loader.querySelector('.loader-label');
     if (labelEl) {
         var fullText = 'Yükleniyor…';
@@ -23,7 +23,7 @@
                 idx += 1;
                 setTimeout(typeNext, TYPE_SPEED_MS);
             } else {
-                // keep caret blinking; no further action needed
+              
             }
         })();
     }
@@ -57,14 +57,14 @@
         loader.classList.add('is-hidden');
         htmlEl.classList.remove('loading');
         bodyEl.classList.remove('loading');
-        // Optional: remove from DOM after transition ends
+        
         loader.addEventListener('transitionend', function cleanup() {
             loader.removeEventListener('transitionend', cleanup);
             if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
         });
     }
 
-    // Safety timeout in case load events never fire
+  
     var safetyTimeout = setTimeout(function () {
         minDelay().then(hideLoader);
     }, 8000);
@@ -81,5 +81,6 @@
         hideLoader();
     });
 })();
+
 
 
