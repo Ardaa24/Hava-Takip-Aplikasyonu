@@ -21,7 +21,7 @@ Kullanıcı, istediği şehri aratarak **API üzerinden anlık hava durumu bilgi
 - **HTML5**
 - **CSS3**
 - **JavaScript**
-- **Hava Durumu API** (örnek: [OpenWeatherMap]
+- **Hava Durumu API** ([OpenWeatherMap]
 
 ---
 
